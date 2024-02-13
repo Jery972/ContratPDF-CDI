@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GENERATION CONTRAT</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: gainsboro;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: larger;
+      }
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-block: 5%;
+      }
+      button {
+        font-size: larger;
+        padding: 1rem;
+        margin-block: 3rem;
+      }
+      label {
+        margin-block: 1.6rem 0.2rem;
+      }
+      input {
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>GENERATION CONTRAT</h1>
+      <label for="societe">Forme de la société et Dénomination sociale :</label>
+      <input type="text" id="societe" name="societe" />
+      <label for="kbis">KBIS :</label>
+      <input type="text" id="kbis" name="kbis" />
+      <label for="siret">N° SIRET :</label>
+      <input type="text" id="siret" name="siret" />
+      <label for="postalSocial1">Adresse du siege social :</label>
+      <input type="text" id="postalSocial1" name="postalSocial1" />
+      <label for="postalSocial2">ligne 2 :</label>
+      <input type="text" id="postalSocial2" name="postalSocial2" />
+      <label for="postalSocial3">ligne 3 :</label>
+      <input type="text" id="postalSocial3" name="postalSocial3" />
+      <label for="nameEmployeur">Représentée par M./MME :</label>
+      <input type="text" id="nameEmployeur" name="nameEmployeur" />
+      <label for="qualityEmployeur">Agissant en qualité de :</label>
+      <input type="text" id="qualityEmployeur" name="qualityEmployeur" />
+
+      <button onclick="generatePDF()">GENERER</button>
+      <script src="js/script.js"></script>
+    </main>
+  </body>
+</html>
