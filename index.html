@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GENERATION CONTRAT</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.9/pdfmake.min.js"
+      integrity="sha512-5wC3oH3tojdOtHBV6B4TXjlGc0E2uk3YViSrWnv1VUmmVlQDAs1lcupsqqpwjh8jIuodzADYK5xCL5Dkg/ving=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.9/vfs_fonts.js"
+      integrity="sha512-nNkHPz+lD0Wf0eFGO0ZDxr+lWiFalFutgVeGkPdVgrG4eXDYUnhfEj9Zmg1QkrJFLC0tGs8ZExyU/1mjs4j93w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <style>
       * {
         margin: 0;
@@ -33,12 +45,40 @@
       }
       input {
         padding: 0.5rem;
+        font-size: large;
+      }
+      h2 {
+        margin-top: 3rem;
+      }
+      #civiliteContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+      #civiliteContainer div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #sejourDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 3px solid yellow;
+        margin-block: 1rem;
+        padding: 0rem 1rem 1rem 1rem;
       }
     </style>
   </head>
   <body>
     <main>
       <h1>GENERATION CONTRAT</h1>
+
+      <h2>EMPLOYEUR</h2>
+
       <label for="societe">Forme de la société et Dénomination sociale :</label>
       <input type="text" id="societe" name="societe" />
       <label for="kbis">KBIS :</label>
@@ -51,13 +91,73 @@
       <input type="text" id="postalSocial2" name="postalSocial2" />
       <label for="postalSocial3">ligne 3 :</label>
       <input type="text" id="postalSocial3" name="postalSocial3" />
-      <label for="nameEmployeur">Représentée par M./MME :</label>
+      <label for="nameEmployeur">Représentée par (M./MME à indiqué) :</label>
       <input type="text" id="nameEmployeur" name="nameEmployeur" />
       <label for="qualityEmployeur">Agissant en qualité de :</label>
       <input type="text" id="qualityEmployeur" name="qualityEmployeur" />
 
+      <h2>SALARIE</h2>
+
+      <label>Civilité</label>
+      <div id="civiliteContainer">
+        <div>
+          <label for="monsieur">Monsieur</label>
+          <input type="radio" id="monsieur" name="civilite" value="0" checked />
+        </div>
+        <div>
+          <label for="madame">Madame</label>
+          <input type="radio" id="madame" name="civilite" value="1" />
+        </div>
+      </div>
+      <label for="fullname">Inscrire tous les noms et prénoms :</label>
+      <input type="text" id="fullname" name="fullname" />
+
+      <label for="birthName"
+        >Inscrire si nom de naissance différant du nom usuel :</label
+      >
+      <input type="text" id="birthName" name="birthName" />
+      <label for="birthDate">Né le :</label>
+      <input type="text" id="birthDate" name="birthDate" />
+      <label for="birthGeo">à : (ville + code département)</label>
+      <input type="text" id="birthGeo" name="birthGeo" />
+
+      <label for="nationality">Nationalité :</label>
+      <input type="text" id="nationality" name="nationality" />
+
+      <label for="postalWorker1">Demeurant :</label>
+      <input type="text" id="postalWorker1" name="postalWorker1" />
+      <label for="postalWorker2">ligne 2 :</label>
+      <input type="text" id="postalWorker2" name="postalWorker2" />
+      <label for="postalWorker3">ligne 3 :</label>
+      <input type="text" id="postalWorker3" name="postalWorker3" />
+      <label for="socialCode"
+        >N° de sécurité sociale : (insérer les espaces comme sur la carte
+        vitale)</label
+      >
+      <input type="text" id="socialCode" name="socialCode" />
+
+      <div id="sejourDiv">
+        <label style="text-align: center" for="titleSejour">
+          (Titre de séjour valant autorisation de travail : remplir les champs
+          suivant le cas échéant )<br />
+          Nature du titre :</label
+        >
+        <input type="text" id="titleSejour" name="titleSejour" />
+        <label for="numberSejour">N° de titre :</label>
+        <input type="text" id="numberSejour" name="numberSejour" />
+        <label for="dateSejour"
+          >Date de validité du titre : (indiqué "du XX/XX au XX/XX")</label
+        >
+        <input
+          type="text"
+          id="dateSejour"
+          name="dateSejour"
+          placeholder="du XX/XX au XX/XX"
+        />
+      </div>
+
       <button onclick="generatePDF()">GENERER</button>
-      <script src="js/script.js"></script>
+      <script src="js/pdfmake.js"></script>
     </main>
   </body>
 </html>
