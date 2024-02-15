@@ -137,8 +137,18 @@ function generatePDF() {
         bold: true,
         margin: [0, 10],
       },
+      h3: {
+        fontSize: 12,
+        bold: true,
+        decoration: "underline",
+        margin: [0, 20, 0, 10],
+      },
       p: {
         fontSize: 11,
+      },
+      p2: {
+        fontSize: 11,
+        alignment: "justify",
       },
       footer1: {
         fontSize: 11,
@@ -146,6 +156,7 @@ function generatePDF() {
       },
       footer2: {
         fontSize: 10,
+        italics: true,
       },
     },
     pageMargins: [55, 40, 55, 80],
@@ -227,7 +238,25 @@ function generatePDF() {
       },
       {
         text: "IL EST CONVENU ET ARRETE CE QUI SUIT :\n\n\n\n",
+        pageBreak: "after",
         style: "h2",
+      },
+
+      {
+        text: "ARTICLE 1. CONVENTION COLLECTIVE",
+        style: "h3",
+      },
+      {
+        text: "Le présent contrat est régi par les dispositions légales, réglementaires et conventionnelles applicables à la Société. En l'espèce, le présent contrat est régi par les dispositions conventionnelles de la Convention Collective .................... , IDCC ....................  (indiquer le code). La Convention Collective s'applique sous réserve d'un changement d'activité, ou tout autre situation entraînant sa mise en cause et les conditions particulières du présent contrat.\n\n",
+        style: "p2",
+      },
+      {
+        text: "Cette convention collective sera applicable pour toutes questions qui ne seraient pas abordées par le présent contrat.",
+        style: "p2",
+      },
+      {
+        text: "ARTICLE 2. DÉFINITION DE L'ENGAGEMENT",
+        style: "h3",
       },
     ],
   };
