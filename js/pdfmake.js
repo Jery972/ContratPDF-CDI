@@ -211,7 +211,7 @@ function generatePDF() {
         style: "p",
       },
       {
-        text: "\n\n\nEt :\n\n\n",
+        text: "\n\nEt :\n\n",
         style: "h2",
       },
       {
