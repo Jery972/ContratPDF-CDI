@@ -42,6 +42,7 @@
       }
       label {
         margin-block: 1.6rem 0.2rem;
+        text-align: center;
       }
       input {
         padding: 0.5rem;
@@ -49,6 +50,7 @@
       }
       h2 {
         margin-top: 3rem;
+        text-align: center;
       }
       #civiliteContainer {
         display: flex;
@@ -155,6 +157,100 @@
           placeholder="du XX/XX au XX/XX"
         />
       </div>
+
+      <h2>ARTICLE 1. CONVENTION COLLECTIVE</h2>
+
+      <label for="nameConvention">Nom Convention Collective :</label>
+      <input type="text" id="nameConvention" name="nameConvention" />
+      <label for="codeConvention">IDCC ( code convention ) :</label>
+      <input type="text" id="codeConvention" name="codeConvention" />
+
+      <h2>ARTICLE 2. DÉFINITION DE L'ENGAGEMENT</h2>
+
+      <label for="nameSalary">Nom Salarié :</label>
+      <input type="text" id="nameSalary" name="nameSalary" />
+      <label for="fonctionSalary">Fonction Salarié :</label>
+      <input type="text" id="fonctionSalary" name="fonctionSalary" />
+      <label for="statusSalary">Statut :</label>
+      <input type="text" id="statusSalary" name="statusSalary" />
+      <label for="positionSalary">Position :</label>
+      <input type="text" id="positionSalary" name="positionSalary" />
+      <label for="echelonSalary">Echelon :</label>
+      <input type="text" id="echelonSalary" name="echelonSalary" />
+      <label for="coefSalary">Coefficient :</label>
+      <input type="text" id="coefSalary" name="coefSalary" />
+      <label for="levelSalary">Niveau :</label>
+      <input type="text" id="levelSalary" name="levelSalary" />
+      <label for="beginDate">Date Début Contrat :</label>
+      <input type="text" id="beginDate" name="beginDate" />
+      <label for="cityUrssaf"
+        >déclaration d'embauche remis à l'URSSAF de (nom de ville) :</label
+      >
+      <input type="text" id="cityUrssaf" name="cityUrssaf" />
+      <label for="taskClient"
+        >A renseigner si le client nous donne une liste de missions à faire
+        figurer dans le contrat :</label
+      >
+      <input type="text" id="taskClient" name="taskClient" />
+
+      <h2>ARTICLE 3. PÉRIODE D'ESSAI (TOUJOURS REGARDER LA CCN)</h2>
+      <label for="essaiPeriode"
+        >Indiquer en lettres puis en chiffre entre parenthèses le nombre en mois
+        ou si besoin en semaines :</label
+      >
+      <input type="text" id="essaiPeriode" name="essaiPeriode" />
+      <label for="maxPeriode"
+        >Conformément aux dispositions conventionnelles, la période d'essai
+        pourra être prolongée pour une durée maximale de ( (a rajouter si la
+        convention collective prévoit un renouvellement) ):</label
+      >
+      <input type="text" id="maxPeriode" name="maxPeriode" />
+
+      <h2>ARTICLE 4. LIEU DE TRAVAIL</h2>
+
+      <label for="WorkPlace1">Lieu de Travail :</label>
+      <input type="text" id="WorkPlace1" name="WorkPlace1" />
+      <label for="WorkPlace2">Ligne 2:</label>
+      <input type="text" id="WorkPlace2" name="WorkPlace2" />
+      <label for="WorkPlace3">Ligne 3 :</label>
+      <input type="text" id="WorkPlace3" name="WorkPlace3" />
+
+      <h2>ARTICLE 5. DURÉE DU TRAVAIL</h2>
+
+      <label for="hourWeek"
+        >Nombres d'heures par semaine : ( sans le "h" )</label
+      >
+      <input type="text" id="hourWeek" name="hourWeek" />
+
+      <label for="hourMonth"
+        >correspondance mensuelle en heure ( 151,67 pour 35h hebdo ou 169 pour
+        39h hebdo) :</label
+      >
+      <input type="text" id="hourMonth" name="hourMonth" />
+
+      <h2>ARTICLE 6. RÉMUNÉRATION</h2>
+
+      <label for="moneyMonth"
+        >Rémunération mensuelle : ( vérifier l’adéquation entre le coefficient
+        hiérarchique et les minima conventionnels )</label
+      >
+      <input type="text" id="moneyMonth" name="moneyMonth" />
+
+      <h2>ARTICLE 9. PROTECTION SOCIALE</h2>
+
+      <label for="orgaOthers"
+        >Remplir si organisme 2 auxquels l’entreprise adhère</label
+      >
+      <input type="text" id="orgaOthers" name="orgaOthers" />
+      <label for="orgaOthers2">Organisme 3</label>
+      <input type="text" id="orgaOthers2" name="orgaOthers2" />
+
+      <h2>SIGNATURE CONTRAT</h2>
+
+      <label for="lieuContrat">Lieu ou est fait le contrat</label>
+      <input type="text" id="lieuContrat" name="lieuContrat" />
+      <label for="dateContrat">Date</label>
+      <input type="text" id="dateContrat" name="dateContrat" />
 
       <button onclick="generatePDF()">GENERER</button>
       <script src="js/pdfmake.js"></script>
