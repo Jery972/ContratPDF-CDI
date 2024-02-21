@@ -241,11 +241,11 @@ function generatePDF() {
       let line1 =
         isGenre() +
         nameSalary +
-        " s’engage à effectuer toutes les démarches administratives nécessaires afin de toujours posséder un titre de séjour valable. De plus, ";
+        " s'engage à effectuer toutes les démarches administratives nécessaires afin de toujours posséder un titre de séjour valable. De plus, ";
       let line2 =
         isGenre() +
         nameSalary +
-        " s’engage à fournir une copie de ce document à l’Employeur.\n";
+        " s'engage à fournir une copie de ce document à l'Employeur.\n";
       let line3 =
         "Le non-respect de cette disposition expose " +
         isGenre() +
@@ -420,10 +420,11 @@ function generatePDF() {
             ", Coefficient " +
             coefSalary +
             ", Niveau " +
-            levelSalary,
+            levelSalary +
+            ".",
           "\nLe présent contrat est conclu pour une durée indéterminée et prend effet à compter du " +
             beginDate +
-            "\n\n",
+            ".\n\n",
           "La déclaration préalable à l'embauche de " +
             isGenre() +
             nameSalary +
@@ -463,7 +464,7 @@ function generatePDF() {
         style: "p2",
       },
       {
-        text: "- En cas de rupture du présent contrat à l’initiative de l’employeur :",
+        text: "- En cas de rupture du présent contrat à l'initiative de l'employeur :",
         style: "p2",
       },
       {
@@ -472,14 +473,14 @@ function generatePDF() {
             ul: [
               "Salarié présent depuis moins de 8 jours : 24h",
               "Salarié présent depuis 8 jours ou plus : 48h",
-              "Salarié présent depuis moins d’un mois : 2 semaines",
-              "Salarié présent depuis plus d’un mois : 1 mois",
+              "Salarié présent depuis moins d'un mois : 2 semaines",
+              "Salarié présent depuis plus d'un mois : 1 mois",
             ],
           },
         ],
       },
       {
-        text: "\n- En cas de rupture du présent contrat à l’initiative du salarié :",
+        text: "\n- En cas de rupture du présent contrat à l'initiative du salarié :",
         style: "p2",
       },
       {
@@ -506,10 +507,10 @@ function generatePDF() {
           WorkPlace1 != ".........."
             ? WorkPlace1 + "\n" + WorkPlace2 + "\n" + WorkPlace3 + "\n\n"
             : "..........\n ..........\n .......... \n\n",
-          "Toutefois et selon les nécessités du service, l’employeur pourra demander à " +
+          "Toutefois et selon les nécessités du service, l'employeur pourra demander à " +
             isGenre() +
             nameSalary +
-            " de réaliser des déplacements de manière temporaire dans les lieux nécessaires à l’accomplissement de sa profession. Ces déplacements ne pourront avoir pour conséquence le changement de résidence.",
+            " de réaliser des déplacements de manière temporaire dans les lieux nécessaires à l'accomplissement de sa profession. Ces déplacements ne pourront avoir pour conséquence le changement de résidence.",
         ],
         style: "p2",
       },
@@ -523,12 +524,11 @@ function generatePDF() {
             nameSalary +
             " réalisera " +
             hourWeek +
-            " hebdomadaires effectives, correspondant à ",
+            "h hebdomadaires effectives, correspondant à ",
           hourMonth + "h mensualisées.\n\n",
-          isGenre() + nameSalary + " pourra être " + civilite == "1"
-            ? "amenée"
-            : "amené",
-          +" à effectuer des heures supplémentaires à la demande de la Direction qui seront rémunérées conformément aux dispositions légales et conventionnelles en vigueur.",
+          isGenre() + nameSalary + " pourra être ",
+          civilite == "1" ? "amenée" : "amené",
+          " à effectuer des heures supplémentaires à la demande de la Direction qui seront rémunérées conformément aux dispositions légales et conventionnelles en vigueur.",
         ],
         style: "p2",
       },
@@ -590,11 +590,11 @@ function generatePDF() {
         text: [
           isGenre() +
             nameSalary +
-            " bénéficie des régimes de retraite et de protection sociale complémentaires auxquels l’entreprise a adhéré, conformément aux dispositions légales et conventionnelles en vigueur.",
+            " bénéficie des régimes de retraite et de protection sociale complémentaires auxquels l'entreprise a adhéré, conformément aux dispositions légales et conventionnelles en vigueur.",
           isGenre() +
             nameSalary +
             " accepte de manière expresse le prélèvement de sa quote-part de cotisations prévus par les différents régimes ainsi que leurs modifications éventuelles.\n\n",
-          "Les organismes auxquels l’entreprise adhère à ce jour sont :\n",
+          "Les organismes auxquels l'entreprise adhère à ce jour sont :\n",
         ],
 
         style: "p2",
@@ -616,11 +616,11 @@ function generatePDF() {
           "Sauf cas de force majeure, ",
           isGenre() +
             nameSalary +
-            " s’engage à informer l’Employeur de toute absence à son poste de travail dans les 24h suivant l’absence et à fournir un justificatif adéquat dans les 48h. \n\n",
-          "En cas de prolongation d’un arrêt de travail initial, ",
+            " s'engage à informer l'Employeur de toute absence à son poste de travail dans les 24h suivant l'absence et à fournir un justificatif adéquat dans les 48h. \n\n",
+          "En cas de prolongation d'un arrêt de travail initial, ",
           isGenre() +
             nameSalary +
-            " s’engage à prévenir l’Employeur et lui transmettre dans les 48h le certificat médical.",
+            " s'engage à prévenir l'Employeur et lui transmettre dans les 48h le certificat médical.",
         ],
         style: "p2",
       },
@@ -630,10 +630,10 @@ function generatePDF() {
       },
       {
         text: [
-          "A l'issue de la période d’essai, le présent contrat se poursuivra pour une durée indéterminée. Toutefois l’Employeur ainsi que ",
+          "A l'issue de la période d'essai, le présent contrat se poursuivra pour une durée indéterminée. Toutefois l'Employeur ainsi que ",
           isGenre() +
             nameSalary +
-            ", séparément ou d’un commun accord, peuvent mettre fin au présent contrat, conformément aux dispositions légales et conventionnelles applicables à l'entreprise.",
+            ", séparément ou d'un commun accord, peuvent mettre fin au présent contrat, conformément aux dispositions légales et conventionnelles applicables à l'entreprise.",
         ],
         style: "p2",
       },
@@ -645,13 +645,13 @@ function generatePDF() {
         text: [
           isGenre() +
             nameSalary +
-            " s’engage à observer toutes les instructions et consignes particulières de travail qui lui seront données et à respecter une stricte obligation de discrétion sur tout ce qui concerne l’activité de l’entreprise.\n\n",
+            " s'engage à observer toutes les instructions et consignes particulières de travail qui lui seront données et à respecter une stricte obligation de discrétion sur tout ce qui concerne l'activité de l'entreprise.\n\n",
           isGenre() +
             nameSalary +
-            " s'engage à faire preuve de la plus grande loyauté envers l'Employeur pendant toute la durée du présent contrat et s'abstient de tout comportement, acte ou omission préjudiciable aux intérêts de l'Employeur durant toute la durée de la relation de travail et à l’issue de celle-ci.\n\n",
+            " s'engage à faire preuve de la plus grande loyauté envers l'Employeur pendant toute la durée du présent contrat et s'abstient de tout comportement, acte ou omission préjudiciable aux intérêts de l'Employeur durant toute la durée de la relation de travail et à l'issue de celle-ci.\n\n",
           isGenre() +
             nameSalary +
-            "s'engage à ne pas exercer d'activité concurrente, directe ou indirecte pendant la durée du contrat.",
+            " s'engage à ne pas exercer d'activité concurrente, directe ou indirecte pendant la durée du contrat.",
           civilite == "1" ? " Elle" : " Il",
           " s'interdit également de détourner ou de tenter de détourner les clients, partenaires commerciaux ou employés de l'Employeur.",
         ],
@@ -666,16 +666,16 @@ function generatePDF() {
           "Dans le cadre de l'exécution du présent contrat, l'Employeur est amené à collecter, traiter et conserver des données personnelles concernant " +
             isGenre() +
             nameSalary +
-            " \n\n",
+            ".\n\n",
           "L'Employeur s'engage à collecter et à traiter les données personnelles de " +
             isGenre() +
             nameSalary,
-          " manière licite, loyale et transparente, conformément aux lois et réglementations en vigueur en matière de protection des données.\n\n",
+          " de manière licite, loyale et transparente, conformément aux lois et réglementations en vigueur en matière de protection des données.\n\n",
           "Les données personnelles de " +
             isGenre() +
             nameSalary +
             " seront traitées dans le seul but d'administrer le contrat, de respecter les obligations légales et réglementaires, et de gérer les relations professionnelles entre l'Employeur et ",
-          isGenre() + nameSalary + "\n\n",
+          isGenre() + nameSalary + ".\n\n",
           isGenre() +
             nameSalary +
             " bénéficie du droit d'accéder à ses données personnelles détenues par l'Employeur et de demander leur rectification en cas d'inexactitude.\n\n",
@@ -693,12 +693,12 @@ function generatePDF() {
       },
       {
         text: [
-          "L’employeur remboursera à " +
+          "L'employeur remboursera à " +
             isGenre() +
             nameSalary +
             " les frais professionnels ",
           civilite == "1" ? "qu'elle sera amenée " : "qu'il sera amené ",
-          "à engager dans l’exercice de ses fonctions et sur demande de son supérieur hiérarchique. Le remboursement se fera sur présentation des justificatifs correspondants et en fonction des barèmes applicables dans la Société.",
+          "à engager dans l'exercice de ses fonctions et sur demande de son supérieur hiérarchique. Le remboursement se fera sur présentation des justificatifs correspondants et en fonction des barèmes applicables dans la Société.",
         ],
         style: "p2",
       },
@@ -710,9 +710,9 @@ function generatePDF() {
         text: [
           isGenre() +
             nameSalary +
-            " bénéficiera tous les deux (2) ans d’un entretien professionnel avec l’Employeur conformément à l’article L. 6315-1 du Code du travail.\n\n",
+            " bénéficiera tous les deux (2) ans d'un entretien professionnel avec l'Employeur conformément à l'article L. 6315-1 du Code du travail.\n\n",
           demarcheSejour(),
-          "Enfin, le salarié déclare être libre de tout engagement et n’être lié(e) par aucune clause de non-concurrence à un autre employeur.\n\n\n\n\n\n",
+          "Enfin, le salarié déclare être libre de tout engagement et n'être lié(e) par aucune clause de non-concurrence à un autre employeur.\n\n\n\n\n\n",
           "Fait en double exemplaire,\n\n",
           "À " + lieuContrat + ", le " + dateContrat + "\n\n\n",
         ],
@@ -725,7 +725,7 @@ function generatePDF() {
             bold: true,
           },
           {
-            text: "L’employeur,",
+            text: "L'employeur,",
             bold: true,
           },
         ],
