@@ -744,3 +744,18 @@ function generatePDF() {
   };
   pdfMake.createPdf(dd).download();
 }
+
+const footer = document.createElement("footer");
+footer.setAttribute("id", "monFooter");
+footer.style.textAlign = "center";
+const copyrightDiv = document.createElement("div");
+copyrightDiv.textContent = "Copyright WINDMILL DIGITAL";
+copyrightDiv.style.textAlign = "center";
+const emailDiv = document.createElement("div");
+emailDiv.textContent = "giudicelli.jeremie@gmail.com";
+emailDiv.style.textAlign = "center";
+
+footer.appendChild(copyrightDiv);
+footer.appendChild(emailDiv);
+
+document.body.appendChild(footer);
