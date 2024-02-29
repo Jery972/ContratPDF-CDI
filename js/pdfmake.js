@@ -224,14 +224,18 @@ function generatePDF() {
     : null;
 
   // ARTICLE 9
-  let orgaOthers = null;
+  let orgaOthers = "....................";
   let orgaOthers2 = null;
+  let orgaOthers3 = null;
 
   document.getElementById("orgaOthers").value
     ? (orgaOthers = document.getElementById("orgaOthers").value)
     : null;
   document.getElementById("orgaOthers2").value
     ? (orgaOthers2 = document.getElementById("orgaOthers2").value)
+    : null;
+  document.getElementById("orgaOthers3").value
+    ? (orgaOthers3 = document.getElementById("orgaOthers3").value)
     : null;
 
   // ARTICLE 15
@@ -601,9 +605,9 @@ function generatePDF() {
       },
       {
         ul: [
-          "Retraite complémentaire : IRCOM - 20 avenue des Arawaks - 97205 FORT-DE-FRANCE CEDEX",
           orgaOthers ? orgaOthers : null,
           orgaOthers2 ? orgaOthers2 : null,
+          orgaOthers3 ? orgaOthers3 : null,
         ],
       },
       {
