@@ -146,7 +146,7 @@ function generatePDF() {
   let levelSalary = "....................";
   let beginDate = "....................";
   let cityUrssaf = "....................";
-  let taskClient = "....................";
+  let taskClient = "";
 
   document.getElementById("nameSalary").value
     ? (nameSalary = document.getElementById("nameSalary").value)
